@@ -11,7 +11,14 @@ namespace linq_tdd
             Func<TAccumulate, TSource, TAccumulate> func,
             Func<TAccumulate, TResult> resultSelector)
         {
-            throw new NotImplementedException();
+            var enumerator = source.GetEnumerator();
+            var acc = seed;
+
+            while(enumerator.MoveNext())
+            {
+                acc = func(acc, enumerator.Current);
+            }
+            return resultSelector(acc);
         }
     }
 }
