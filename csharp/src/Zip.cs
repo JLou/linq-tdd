@@ -10,7 +10,12 @@ namespace linq_tdd
             IEnumerable<TSecond> second,
             Func<TFirst, TSecond, TResult> resultSelector)
         {
-            throw new NotImplementedException();
+            var enum1 = first.GetEnumerator();
+            var enum2 = second.GetEnumerator();
+            while (enum1.MoveNext() && enum2.MoveNext())
+            {
+                yield return resultSelector(enum1.Current, enum2.Current);
+            }
         }
     }
 }

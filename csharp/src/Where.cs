@@ -8,7 +8,15 @@ namespace linq_tdd
         public static IEnumerable<TSource> Where2<TSource>(
             this IEnumerable<TSource> source, Func<TSource, bool> predicate)
         {
-            throw new NotImplementedException();
+            var enumerator = source.GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                if (predicate(enumerator.Current))
+                {
+                    yield return enumerator.Current;
+                }
+            }
+
         }
     }
 }

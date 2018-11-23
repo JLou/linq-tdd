@@ -7,7 +7,13 @@ namespace linq_tdd
     {
         public static TSource FirstOrDefault2<TSource>(this IEnumerable<TSource> source)
         {
-            throw new NotImplementedException();
+            TSource result = default(TSource);
+            using (var _enum = source.GetEnumerator())
+            {
+                if (_enum.MoveNext())
+                    result = _enum.Current;
+            }
+            return result;
         }
     }
 }
