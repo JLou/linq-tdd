@@ -9,6 +9,8 @@ Dans ce dojo vous allez implémenter des fonctions de bases du langage vous-mêm
 - Un éditeur, je recommende vs code
 - npm ou yarn fonctionnel
 
+Le code est écrit en typescript. Cela ne devrait changer grand chose pour vous a part l'autocomplétion et que l'ide ne sera pas content si vous ne retournez pas le bon type.
+
 ## Tester son code
 
 Pour lancer les tests en mode watch, lancez la commande :
@@ -45,3 +47,89 @@ Pattern Mode Usage
 Cela ne jouera que les tests pour `every`.
 
 > Rappel : le but est de lancer les tests AVANT d'écrire son code
+
+## Règles
+
+Le but est d'implémenter ces fonctions, donc évidement utiliser la version native pour résoudre le problème est interdit. La plupart des fonctions peuvent être résolues juste avec une boucle `for` classique. Essayez de vous y cantonner.
+
+## A vous de jouer !
+
+### 1. Includes
+
+```ts
+function includes(array: any[], searchElement: any): boolean;
+```
+
+Includes vérifie qu'un élement `searchElement` est bien présent dans le tableau `array`.
+Retourne `true` si l'élement est présent, `false` sinon.
+
+> Attention, il y a un test avec `NaN`, or en JS, `NaN !== NaN` il faut donc trouver l'astuce pour faire passer le test. Si ca vous prend plus de 2min, désactivez le test et revenez y plus tard.
+
+### 2. Some
+
+```typescript
+function some<T>(array: T[], predicate: (T) => boolean): boolean;
+```
+
+Some vérifie qu'au moins un des élement du tableau `array` satisfait la condition `predicate`. `predicate` est une fonction qui prend un élément du tableau en entrée, et retourne un booléen disant si la condition est satisfaite par l'élement.
+
+Retourne `true` si au moins 1 élément satisfait la condition, `false` sinon. Si le tableau est vide, retounez `false`.
+
+### 3. Every
+
+```ts
+function every<T>(array: T[], predicate: (T) => boolean): boolean;
+```
+
+Every fonctionne comme le some, sauf qu'il vérifie que TOUT les élements du tableau satisfont la condition.
+
+Retourne `true` si tous les éléments satisfont la condition, `false` sinon. Si le tableau est vide, retounez `true`.
+
+### 4. ForEach
+
+```ts
+```
+
+todo
+
+### 5. Map
+
+```ts
+function map<T, U>(array: T[], callback: (value: T) => U): U;
+```
+
+Map est une projection. On a en entrée un tableau de `T, array`, et une fonction `callback` qui a en entrée un element de type `T` et en sortie un element de type `U`.
+On applique cette fonction a l'ensemble des élements du tableau et on obtient un nouveau tableau de `U`.
+
+### 6. Filter
+
+```ts
+function filter<T>(array: T[], callbackFn: (T) => boolean): T[];
+```
+
+Filter va, comme son nom l'indique filtrer les élements d'un tableau selon une condition et retourner un nouveau tableau avec uniquement les élements qui satisfont la condition `callbackFn`.
+
+### 7. Reduce
+
+```ts
+function reduce<T, U>(
+  array: T[],
+  reducerFn: (acc: U, currentValue: T, currentIndex: number) => U,
+  initialValue: U
+): U;
+```
+
+Reduce applique une fonction d'accumulation a une séquence. On part d'une valeur initiale pour l'accumulateur `initialValue`, et pour chacun des élements du tableau `array`, on met a jour l'accumulateur avec la fonction `reducerFn`.
+Par exemple, pour calculer la somme et le produit d'un tableau d'entier, on fait :
+
+```js
+reduce([1, 2, 3, 4], (acc, next) => acc + next, 0); // 10
+reduce([1, 2, 3, 4], (acc, next) => acc * next, 1); // 24
+```
+
+### 8. Les Objets
+
+```ts
+```
+
+todo
