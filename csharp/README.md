@@ -125,3 +125,29 @@ new dynamic[] {
 }.SelectMany(e => e.item);
 // devient [1,2,3,4,5,6]
 ```
+
+### 5. Aggregate2
+
+```csharp
+public static TResult Aggregate2<TSource, TAccumulate, TResult>(
+            this IEnumerable<TSource> source,
+            TAccumulate seed,
+            Func<TAccumulate, TSource, TAccumulate> func,
+            Func<TAccumulate, TResult> resultSelector)
+```
+
+On complique un peu les choses avec l'aggregate. Cette méthode applique une fonction d'accumulation `func` sur une séquence. La `seed` est la valeur initiale utilisé par l'accumulateur, et le selecteur `resultSelector` permet de transformer le resultat final de l'accumulation.
+Exemple, on va chercher quel est le fruit avec le nom le plus long, puis retourner cette valeur en majuscule :
+
+```csharp
+string[] fruits = { "pomme", "mangue", "orange", "fruit de la passion", "raisin" };
+string longestName =
+    fruits.Aggregate2("banane",
+    // garde la valeur du fruit le plus long au fur et a mesure
+                    (longest, next) =>
+                        next.Length > longest.Length ? next : longest,
+    // retourne le resultat final en majuscules.
+                    fruit => fruit.ToUpper());
+```
+
+Les valeurs successives que va prendre la valeur de l'accumulateur seront : `banane, banane, banane, banane, fruit de la passion, fruit de la passion`. Puis on applique la transformation : `FRUIT DE LA PASSION`.
