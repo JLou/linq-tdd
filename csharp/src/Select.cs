@@ -9,6 +9,7 @@ namespace linq_tdd
         public static IEnumerable<TResult> Select2<TSource, TResult>(
             this IEnumerable<TSource> source, Func<TSource, TResult> selector)
         {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace linq_tdd
@@ -6,6 +7,7 @@ namespace linq_tdd
     {
         public static TSource FirstOrDefault2<TSource>(this IEnumerable<TSource> source)
         {
+            throw new NotImplementedException();
         }
     }
 }

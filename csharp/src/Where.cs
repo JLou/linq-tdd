@@ -8,6 +8,7 @@ namespace linq_tdd
         public static IEnumerable<TSource> Where2<TSource>(
             this IEnumerable<TSource> source, Func<TSource, bool> predicate)
         {
+            throw new NotImplementedException();
         }
     }
 }
