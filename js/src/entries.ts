@@ -1,4 +1,4 @@
-function entries(object: Object): string[] {
+function entries(object: Object): [string, any][] {
   let toReturn = [];
 
   return toReturn;

@@ -1,6 +1,5 @@
-function values(object: Object): string[] {
+function values(object: Object): any[] {
   let toReturn = [];
-
   return toReturn;
 }
 
