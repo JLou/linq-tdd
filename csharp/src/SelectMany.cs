@@ -7,11 +7,14 @@ namespace linq_tdd
     {
         public static IEnumerable<TResult> SelectMany2<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, IEnumerable<TResult>> selector)
         {
-            foreach (var item in source)
+            var enumParent = source.GetEnumerator();
+            while(enumParent.MoveNext())
             {
-                foreach (var subItem in selector(item))
+                var subEnum = selector(enumParent.Current);
+                var subEnumerator = subEnum.GetEnumerator();
+                while(subEnumerator.MoveNext())
                 {
-                    yield return subItem;
+                    yield return subEnumerator.Current;
                 }
             }
 
