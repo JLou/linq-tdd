@@ -88,9 +88,14 @@ Retourne `true` si tous les éléments satisfont la condition, `false` sinon. Si
 ### 4. ForEach
 
 ```ts
+function forEach<T>(
+  array: T[],
+  callbackfn: (value: T, index: number) => void
+): void {}
 ```
 
-todo
+Foreach itère sur chacun des élements du tableau `array`, et appelle la fonction `callbackFn` avec l'élement courant et son index a chaque tour.
+Cette méthode ne retourne rien.
 
 ### 5. Map
 
