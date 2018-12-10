@@ -151,3 +151,11 @@ string longestName =
 ```
 
 Les valeurs successives que va prendre la valeur de l'accumulateur seront : `banane, banane, banane, banane, fruit de la passion, fruit de la passion`. Puis on applique la transformation : `FRUIT DE LA PASSION`.
+
+## Bonus
+
+### 6. Zip
+
+Si vous avez terminé, pouvez vous attaquer au Zip. Fonction méconnue qui permet de fusionner deux énumérations.
+
+Pas d'aide ici, vous devriez être à l'aise maintenant. Voici la [documentation](https://docs.microsoft.com/fr-fr/dotnet/api/system.linq.enumerable.zip?view=netcore-2.2#exemples).
