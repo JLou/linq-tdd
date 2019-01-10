@@ -1,8 +1,8 @@
+using linq_tdd;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using linq_tdd;
 using Xunit;
 
 
@@ -43,7 +43,7 @@ namespace tests
 
             IEnumerable<int> result = source.Where2(falsePredicate);
 
-            Assert.Equal(0, result.Count());
+            Assert.Empty(result);
         }
 
         [Fact]
@@ -69,7 +69,7 @@ namespace tests
 
             IEnumerable<int> result = source.Where2(falsePredicate);
 
-            Assert.Equal(0, result.Count());
+            Assert.Empty(result);
         }
 
 
@@ -96,7 +96,7 @@ namespace tests
 
             IEnumerable<int> result = source.Where2(falsePredicate);
 
-            Assert.Equal(0, result.Count());
+            Assert.Empty(result);
         }
 
 
@@ -123,7 +123,7 @@ namespace tests
 
             IEnumerable<int> result = source.Where2(falsePredicate);
 
-            Assert.Equal(0, result.Count());
+            Assert.Empty(result);
         }
 
 
@@ -150,7 +150,7 @@ namespace tests
 
             IEnumerable<int> result = source.Where2(falsePredicate);
 
-            Assert.Equal(0, result.Count());
+            Assert.Empty(result);
         }
         [Fact]
         public void Where_EmptyEnumerable_ReturnsNoElements()
@@ -160,7 +160,7 @@ namespace tests
 
             IEnumerable<int> result = source.Where2(value => { wasSelectorCalled = true; return true; });
 
-            Assert.Equal(0, result.Count());
+            Assert.Empty(result);
             Assert.False(wasSelectorCalled);
         }
 
