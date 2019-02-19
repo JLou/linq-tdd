@@ -43,7 +43,7 @@ describe("reduce", () => {
     let result = reduce(array, (acc, el, idx) => acc + el * idx, 0);
 
     //Assert
-    expect(result).toBe(28);
+    expect(result).toBe(12);
   });
 
   test("using accumulator value, current element, index and initial value", () => {
@@ -55,7 +55,7 @@ describe("reduce", () => {
     let result = reduce(array, (acc, el, idx) => acc + el * idx, 50);
 
     //Assert
-    expect(result).toBe(78);
+    expect(result).toBe(62);
   });
 
   test("using non numeral values", () => {
@@ -66,7 +66,7 @@ describe("reduce", () => {
     let result = reduce(array, (acc, el, idx) => `${acc} #${idx}-${el}`, "");
 
     //Assert
-    expect(result).toBe(" #1-cat #2-dog #3-octopus");
+    expect(result).toBe(" #0-cat #1-dog #2-octopus");
   });
 
   test("transforming text into number", () => {
