@@ -1,7 +1,7 @@
 import { filter } from "./filter";
 
 describe("filter", () => {
-  let trueCases = [
+  let trueCases: [any[], (value: any) => boolean, any][] = [
     [
       ["spray", "limit", "elite", "exuberant", "destruction", "present"],
       word => word.length > 6,

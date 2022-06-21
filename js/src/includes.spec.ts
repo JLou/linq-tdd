@@ -1,7 +1,7 @@
 import { includes } from "./includes";
 
 describe("includes", () => {
-  let trueCases = [
+  let trueCases : [any[], any][] = [
     [[1, 2, 3], 3],
     [["a", "b", "c"], "b"],
     [[1, 2, NaN], NaN],
@@ -17,13 +17,13 @@ describe("includes", () => {
     expect(result).toBe(true);
   });
 
-  let falseCases = [
+  let falseCases : [any[], any][] = [
     [[], 3],
     [["a", "b", "c"], "d"],
     [[1, 2, NaN], 4],
     [[undefined, "a", 15], null],
     [[null, 55, "azeaze"], undefined]
-  ];
+  ] ;
 
   test.each(falseCases)("%p does not includes %p", (arr, searchElement) => {
     //Act

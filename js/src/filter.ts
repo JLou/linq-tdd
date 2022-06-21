@@ -1,4 +1,4 @@
-function filter<T>(array: T[], callbackFn: (T) => boolean): T[] {
+function filter<T>(array: T[], callbackFn: (value: T) => boolean): T[] {
   return [];
 }
 

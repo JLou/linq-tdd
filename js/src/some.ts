@@ -1,4 +1,4 @@
-function some<T>(array: T[], predicate: (T) => boolean): boolean {
+function some<T>(array: T[], predicate: (value: T) => boolean): boolean {
   return false;
 }
 
