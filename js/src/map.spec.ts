@@ -1,3 +1,6 @@
+import { describe, test, expect } from "vitest";
+
+
 import { map } from "./map";
 describe("map", () => {
   test("[map] apply function", () => {

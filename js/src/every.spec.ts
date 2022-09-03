@@ -1,3 +1,5 @@
+import { describe, test, expect } from "vitest";
+
 import { every } from "./every";
 
 describe("every", () => {

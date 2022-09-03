@@ -1,3 +1,5 @@
+import { describe, test, expect } from "vitest";
+
 import { some } from "./some";
 
 describe("some", () => {
