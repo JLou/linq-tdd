@@ -1,15 +1,16 @@
+import { describe, test, expect, vi } from "vitest";
 import { forEach } from "./foreach";
 
 describe("foreach", () => {
   test("empty array should not execute the callback", () => {
     //Arrange
     let array = [];
-
+    let fn = vi.fn();
     //Act
-    forEach(array, () => fail());
+    forEach(array, fn);
 
     //Assert
-    //Did not fail
+    expect(fn).not.toHaveBeenCalled();
   });
 
   test("should iterate each value", () => {
@@ -17,7 +18,7 @@ describe("foreach", () => {
     let array = [1, undefined, "toto", {}];
     let newArray = [];
     //Act
-    forEach(array, val => newArray.push(val));
+    forEach(array, (val) => newArray.push(val));
 
     //Assert
     expect(newArray).toEqual(array);
@@ -44,6 +45,11 @@ describe("foreach", () => {
     forEach(array, (val, idx) => idxArray.push([val, idx]));
 
     //Assert
-    expect(idxArray).toEqual([[1, 0], [undefined, 1], ["toto", 2], [{}, 3]]);
+    expect(idxArray).toEqual([
+      [1, 0],
+      [undefined, 1],
+      ["toto", 2],
+      [{}, 3],
+    ]);
   });
 });

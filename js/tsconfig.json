@@ -3,7 +3,7 @@
     "lib": ["esnext"],
     "rootDir": "src",
     "target": "es6",
-    "outDir": "dist"
+    "outDir": "dist",
+    "moduleResolution": "node",
   },
-  "exclude": ["node_modules"]
 }

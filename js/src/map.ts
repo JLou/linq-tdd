@@ -1,5 +1,5 @@
-function map<T, U>(arr: T[], callback: (value: T) => U): U[] {
-  let newArr: U[] = [];
+function map<TInput, TOuput>(array: TInput[], mapFn: (value: TInput) => TOuput): TOuput[] {
+  let newArr: TOuput[] = [];
 
   return newArr;
 }
