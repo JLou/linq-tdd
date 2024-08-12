@@ -8,8 +8,9 @@ Une batterie de tests unitaires vous permettra de vérifier que votre code fonct
 
 ## Prérequis - Outils
 
-- .NET 6
+- .NET 8
 - Un IDE capable d'afficher les résultats des tests
+
 ## Rappel sur les énumerateurs
 
 L'interface `IEnumerable<T>` fournit une méthode `GetEnumerator()` qui vous retourne un `IEnumerator<T>`. Cet Enumerator vous permet de parcourir les elements dans l'énumérable via 2 méthodes :
