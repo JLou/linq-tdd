@@ -10,8 +10,8 @@
   "author": "Jean-Lou Piermé",
   "license": "ISC",
   "devDependencies": {
-    "@vitest/ui": "2.0.5",
-    "typescript": "5.5.4",
-    "vitest": "2.0.5"
+    "@vitest/ui": "5.0.5",
+    "typescript": "7.0.2",
+    "vitest": "^5.0.5"
   }
 }
